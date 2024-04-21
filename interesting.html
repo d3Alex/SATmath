@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>The SAT Problem That Everybody Got Wrong
+    </title>
+    <style type="text/css">
+        :root {
+            --white: #fff;
+            --smoke-white: #f1f3f5;
+            --blue: #4169e1;
+            --pink: hsl(340, 69%, 68%);
+        }
+
+        html,
+        body {
+            /* width: 100%; */
+            height: 100%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-size: 40px 40px;
+            background-image:
+                linear-gradient(to right, lightgrey 1px, transparent 1px),
+                linear-gradient(to bottom, lightgrey 1px, transparent 1px);
+        }
+
+        .centered_section {
+            display: grid;
+            justify-content: center;
+            align-content: center;
+            margin-top: 2em;
+            position: relative;
+        }
+
+        .centered_row {
+            grid-auto-flow: row;
+            gap: 2em;
+        }
+
+        .centered_column {
+            grid-auto-flow: column;
+        }
+
+        .rotation_path {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            /* border: 1px solid white; */
+            border-radius: 50%;
+            transform: rotate(0deg);
+            transition: transform 0.7s linear;
+        }
+
+        #simplification .rotation_path {
+            width: 100px;
+            height: 100px;
+        }
+
+        .circleA {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transform: rotate(0deg);
+            transition: transform 0.7s linear;
+            top: -50px;
+            /* -cicleA size/2 */
+            left: 150px;
+            /* rotation_path size/2 - cicleA size/2 */
+        }
+
+        #simplification .circleA {
+            width: 100px;
+            height: 100px;
+            top: -50px;
+            /* -cicleA size/2 */
+            left: -1px;
+            /* rotation_path size/2 - cicleA size/2 */
+        }
+
+        .circleB {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            transform: rotate(0deg);
+            transition: transform 0.7s linear;
+            left: 50px;
+            top: 50px;
+            background: hsl(340, 69%, 68%);
+        }
+
+        #simplification .circleB {
+            width: 5px;
+            height: 5px;
+            left: 45px;
+            top: 45px;
+        }
+
+        #answerNot3{
+            position: relative;top:-20%;
+        }
+
+        .circleA img {
+            max-width: 100%;
+            border-radius: 50%;
+        }
+
+        p.circle_label {
+            position: absolute;
+            font-size: x-large;
+            color: white;
+        }
+
+        .labelA {
+            top: 30%;
+            left: 0%;
+            margin-top: -9px;
+        }
+
+        .labelB {
+            top: 80%;
+            left: 35%;
+            margin-top: -9px;
+        }
+
+        #simplification .labelB {
+            top: 50%;
+            left: 45%;
+            color: var(--pink);
+        }
+
+        button {
+            padding: 0.6em 1em;
+            border: 4px solid #a489ec;
+            transition: ease-in-out 0.3s;
+            background-color: transparent;
+            color: #a489ec;
+            font-weight: bolder;
+            font-size: 16px;
+        }
+
+        button:hover {
+            transform: scale(1.2) rotate(0deg);
+            background-color: #a489ec;
+            color: white;
+        }
+
+        mtext {
+max-width: 90vw;
+        }
+
+        /*Radio*/
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        section {
+            position: relative;
+            /* width: 100%;
+            height: 100%; */
+            box-sizing: border-box;
+  min-height: 100vh;
+  margin: 0;
+  padding: 1rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .selector {
+            position: relative;
+            width: 60%;
+            background-color: var(--smoke-white);
+            height: 80px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 9999px;
+            box-shadow: 0 0 16px rgba(0, 0, 0, .2);
+        }
+
+        .selector-item {
+            position: relative;
+            flex-basis: calc(70% / 6);
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .selector-item_radio {
+            appearance: none;
+            display: none;
+        }
+
+        .selector-item_label {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            border-radius: 9999px;
+            line-height: 400%;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            transition-duration: .5s;
+            transition-property: transform, box-shadow;
+            transform: none;
+            font-size: larger;
+        }
+
+        .selector-item_radio:checked+.selector-item_label {
+            background-color: var(--blue);
+            color: var(--white);
+            box-shadow: 0 0 4px rgba(0, 0, 0, .5), 0 2px 4px rgba(0, 0, 0, .5);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width:480px) {
+            .selector {
+                width: 90%;
+            }
+        }
+
+        /*paragraphs */
+        h1 {
+            font-size: 5rem;
+            text-transform: capitalize;
+            text-shadow:
+                1px 1px 1px red,
+                2px 2px 1px red;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        h1+p {
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 1.5rem;
+            font-family: Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            letter-spacing: 1px;
+            margin: 2rem;
+            padding: 0 2rem 0 2rem;
+        }
+
+        ul {
+            list-style: square;
+            display: table;
+            margin: 0 auto;
+            font-size: 2rem;
+        }
+
+        li {
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="task">
+        <p>The radius of circle B is three times the radius of circle A. Starting from the position shown in the figure,
+            circle A rolls around circle B. When circle A returns to its starting point, how many rotations will it have
+            completed?</p>
+        <div class="selector">
+            <div class="selector-item">
+                <input type="radio" id="radio1" name="selector" class="selector-item_radio" value="3/2" checked>
+                <label for="radio1" class="selector-item_label">
+                    <math>
+                        <mfrac displaystyle="true">
+                            <mn>3</mn>
+                            <mn>2</mn>
+                        </mfrac>
+                    </math>
+                </label>
+            </div>
+            <div class="selector-item">
+                <input type="radio" id="radio2" name="selector" class="selector-item_radio" value="6">
+                <label for="radio2" class="selector-item_label">
+                    <math>
+                        <!-- <mi>π</mi> -->
+                        <mn>6</mn>
+                    </math>
+                </label>
+            </div>
+            <div class="selector-item">
+                <input type="radio" id="radio3" name="selector" class="selector-item_radio" value="3">
+                <label for="radio3" class="selector-item_label">
+                    <math>
+                        <!-- <mi>π</mi> -->
+                        <mn>3</mn>
+                    </math></label>
+            </div>
+            <div class="selector-item">
+                <input type="radio" id="radio4" name="selector" class="selector-item_radio" value="9/2">
+                <label for="radio4" class="selector-item_label"> <math>
+                        <mfrac displaystyle="true">
+                            <!-- <mi>π</mi> -->
+                            <mn>9</mn>
+                            <mn>2</mn>
+                        </mfrac>
+                    </math></label>
+            </div>
+            <div class="selector-item">
+                <input type="radio" id="radio5" name="selector" class="selector-item_radio" value="9">
+                <label for="radio5" class="selector-item_label">
+                    <math>
+                        <!-- <mi>π</mi> -->
+                        <mn>9</mn>
+                    </math></label>
+            </div>
+            <div class="selector-item">
+                <input type="radio" id="radio6" class="selector-item_radio">
+                <label for="radio6" class="selector-item_label submit">Check</label>
+            </div>
+        </div>
+        <div id="answer3" style="flex-grow: 3;">
+            <p>Your provided the same answer as majority of students who took the SAT, but the test writers'
+                <b>did not provide the correct option</b>among the possible answers. '3' was the
+                intended multiple-choice answer on the SAT. It looks quite obvious:
+            </p>
+            <p>
+            <ul>
+                <li>Circumference of circle B is
+                    <math>
+                        <mn>2</mn>
+                        <mi>π</mi>
+                        <msub>
+                            <mi>R</mi>
+                            <mn style="font-size:50%">B</mn>
+                        </msub>
+                    </math>
+                </li>
+                <li>Circumference of circle A is
+                    <math>
+                        <mn>2</mn>
+                        <mi>π</mi>
+                        <msub>
+                            <mi>R</mi>
+                            <mn style="font-size:50%">A</mn>
+                        </msub>
+                    </math>
+                </li>
+                <li>
+                    <math>
+                        <mtext>So,</mtext>
+                        <mtable style="math-style: normal;">
+                            <mtr>
+                                <mtd>
+                                    <mfrac displaystyle="true">
+                                        <mrow>
+                                            <mn>2</mn>
+                                            <mi>π</mi>
+                                            <msub>
+                                                <mi>R</mi>
+                                                <mn style="font-size:50%">B</mn>
+                                            </msub>
+                                        </mrow>
+                                        <mrow>
+                                            <mn>2</mn>
+                                            <mi>π</mi>
+                                            <msub>
+                                                <mi>R</mi>
+                                                <mn style="font-size:50%">A</mn>
+                                            </msub>
+                                        </mrow>
+                                    </mfrac>
+                                </mtd>
+                                <mtd>
+                                </mtd>
+                                <mtd>
+                                    <mspace width="10px" />
+                                </mtd>
+                                <mtd>
+                                    <mo>=</mo>
+                                </mtd>
+                                <mtd>
+                                    <mspace width="10px" />
+                                </mtd>
+                                <mtd>
+                                    <mfrac displaystyle="true">
+                                        <mrow>
+                                            <msub>
+                                                <mi>R</mi>
+                                                <mn style="font-size:50%">B</mn>
+                                            </msub>
+                                        </mrow>
+                                        <mrow>
+                                            <msub>
+                                                <mi>R</mi>
+                                                <mn style="font-size:50%">A</mn>
+                                            </msub>
+                                        </mrow>
+                                    </mfrac>
+                                </mtd>
+                                <mtd>
+                                    <mspace width="10px" />
+                                </mtd>
+                                <mtd>
+                                    <mo>=</mo>
+                                </mtd>
+                                <mtd>
+                                    <mspace width="10px" />
+                                </mtd>
+                                <mtd>
+                                    <mn>3</mn>
+                                </mtd>
+                            </mtr>
+
+                        </mtable>
+                    </math>
+                </li>
+            </ul>
+            </p>
+            <p>... But, in fact, circle A makes <b>four</b> rotations, not three. See <a href="#simplification">below</a> why
+            </p>
+        </div>
+        <div id="answerNot3">
+            <p>Not really... Try again</p>
+        </div>
+    </section>
+    <section id="simplification">
+        <p>
+            <math style="padding:0 0.5rem 0 0.5rem;">
+                <mtext>It is always a good idea to simplify task. Let set the radius of circle
+                    B close to zero. If the number of rotations equals</mtext>
+                <mfrac displaystyle="true">
+                    <mrow>
+                        <msub>
+                            <mi>R</mi>
+                            <mn style="font-size:50%">B</mn>
+                        </msub>
+                    </mrow>
+                    <mrow>
+                        <msub>
+                            <mi>R</mi>
+                            <mn style="font-size:50%">A</mn>
+                        </msub>
+                    </mrow>
+                </mfrac>
+                <mspace width="10px" />
+                <mtext>and</mtext>
+                <mspace width="10px" />
+                <msub>
+                    <mi>R</mi>
+                    <mn style="font-size:50%">B</mn>
+                </msub>
+                <mrow>
+                    <mo>→</mo>
+                    <mn>0</mn>
+                    <mtext>, </mtext>
+                </mrow>
+                <mtext>then it should be 0 (no) circle A rotations. But the circle A still rotates once, even if circle B' radius
+                    is almost 0, because the rotation path length equals to</mtext>
+                <mrow>
+                    <mspace width="3px" />
+                    <mn>2</mn>
+                    <mi>π</mi>
+                    <mo>(</mo>
+                    <msub>
+                        <mi>R</mi>
+                        <mn style="font-size:50%">B</mn>
+                    </msub>
+                    <mo>+</mo>
+                    <msub>
+                        <mi>R</mi>
+                        <mn style="font-size:50%">A</mn>
+                    </msub>
+                    <mo>)</mo>
+                    <mspace width="1px" />
+                    <ms>, not</ms>
+                    <mspace width="4px" />
+                    <mn>2</mn>
+                    <mi>π</mi>
+                    <msub>
+                        <mi>R</mi>
+                        <mn style="font-size:50%">B</mn>
+                    </msub>
+                </mrow>
+            </math>
+        </p>
+        <div class="centered_section centered_column">
+            <div class="rotation_path">
+                <div class="circleA">
+                    <p class="circle_label labelA">A</p><img src="circleA.png">
+                </div>
+                <div class="circleB">
+                </div>
+            </div>
+            <p class="circle_label labelB">B</p>
+        </div>
+        <div class="centered_section centered_column"><button class="animate" rel="simplification">Rotate
+                once</button>
+        </div>
+    </section>
+
+    <section id="real" class="centered_section centered_row">
+        <p class="centered_section centered_column">See animation of original task</p>
+        <div class="centered_section centered_column">
+            <div class="rotation_path">
+                <div class="circleA">
+                    <p class="circle_label labelA">A</p><img src="circleA.png">
+                </div>
+                <div class="circleB">
+                </div>
+            </div>
+            <p class="circle_label labelB">B</p>
+        </div>
+        <div class="centered_section centered_column"><button class="animate" rel="real">Rotate once</button></div>
+    </section>
+
+
+    <script>
+
+        function getCenter(el) {
+            const { left, top, width, height } = el.getBoundingClientRect()
+            const centerX = left + width / 2
+            const centerY = top + height / 2
+            return { x: centerX, y: centerY };
+        }
+
+        let _rotation_path_angle = 0;
+        let _cicleA_angle = 0;
+        let _rotatio_angle_360 = -360;
+        let _rotatio_angle_90 = 90;
+
+        const real_rotation_path = document.getElementById("real").querySelector(".rotation_path");
+        const real_cicleA = document.getElementById("real").querySelector(".circleA");
+        const simplification_rotation_path = document.getElementById("simplification").querySelector(".rotation_path");
+        const simplification_cicleA = document.getElementById("simplification").querySelector(".circleA");
+        const answerNot3 = document.getElementById("answerNot3");
+        const answer3 = document.getElementById("answer3");
+        //answer3.style.display = "none";
+        answer3.style.visibility='hidden'; 
+        answerNot3.style.display = "none";
+
+        const animateButtons = document.querySelectorAll(".animate");
+
+        let current_id = "";
+
+        for (let index = 0; index < animateButtons.length; index++) {
+            const btn = animateButtons[index];
+            btn.addEventListener('click', function (e) {
+
+                const id = e.target.attributes.rel.value;
+                if (current_id != id) {
+                    _rotation_path_angle = 0;
+                    _cicleA_angle = 0;
+                    current_id = id;
+                }
+
+                const rotation_path = id == "real" ? real_rotation_path : simplification_rotation_path;
+                const cicleA = id == "real" ? real_cicleA : simplification_cicleA;
+                const rotatio_angle = id == "real" ? _rotatio_angle_90 : _rotatio_angle_360;
+
+                //console.log(id);
+                _rotation_path_angle += rotatio_angle;
+                _cicleA_angle += 360;
+
+                rotation_path.style.transform = 'rotate(' + _rotation_path_angle + 'deg)';
+                cicleA.style.transform = 'rotate(-' + _cicleA_angle + 'deg)';
+            });
+        }
+
+        const allSelectors = document.querySelectorAll('input[name=selector]');
+        const submitSelector = document.getElementById("radio6");
+        for (let index = 0; index < allSelectors.length; index++) {
+            allSelectors[index].addEventListener('click', function (e) {
+                answer3.style.visibility='hidden'; 
+                answerNot3.style.display = "none";
+                submitSelector.checked = false;
+            });
+        }
+
+        submitSelector.addEventListener('click', function (e) {
+            answer3.style.visibility='hidden'; 
+            answerNot3.style.display = "none";
+            const v = document.querySelector('input[name=selector]:checked').value;
+            if (v == 3) {
+                answer3.style.visibility='visible'; 
+            } else {
+                answerNot3.style.display = "block";
+            }
+        });
+
+    </script>
+</body>
+
+</body>
+
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Problem Solving</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/carousel.css">
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        .outlined {
+            border: solid 3px slategrey;
+        }
+
+        tr.top td {
+            border-top: solid 3px slategrey !important;
+        }
+
+        tr.bottom td {
+            border-bottom: solid 3px slategrey !important;
+        }
+
+        tr.row td:first-child {
+            border-left: solid 3px slategrey;
+        }
+
+        tr.row td:last-child {
+            border-right: solid 3px slategrey;
+        }
+
+
+        .table-cell--dark {
+            background-color: slategrey;
+            /* border-color: #5a6673; */
+            color: white;
+        }
+
+        .table-cell--medium {
+            background-color: #b8c0c8;
+            /* border-color: #a9b3bc; */
+        }
+
+        .table-cell--light {
+            background-color: white;
+            border-color: #e2e6e9;
+        }
+
+        .table-cell--highlight {
+            background-color: lightgreen;
+            border-color: #64e764;
+        }
+
+        .table-cell--alert {
+            background-color: darkorange;
+            border-color: #cc7000;
+            color: white;
+        }
+
+        table td {
+            padding: 0.8em 1.2em;
+        }
+
+        table.bordered td {
+            border: solid 2px #e2e6e9;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="section vertical" id="task1">
+        <h3 class="section_title">Problem Solving. Sample task 1</h3>
+        <div class="raisedbox">
+            <p>
+                The same 20 contestants, on each of 3 days, answered 5 questions in order to win a prize. Each
+                contestant
+                received 1 point for each correct answer. The number of contestants receiving a given score on each day
+                is shown
+                in the table below.
+            </p>
+            <p>
+            <table style="height: 209px;margin:0 auto" width="90%" class="bordered">
+                <colgroup>
+                    <col>
+                    <col class="outlined">
+                    <col span="3">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <td width="12.5%"></td>
+                        <td width="12.5%" class="table-cell--dark">5 out of 5</td>
+                        <td width="12.5%" class="table-cell--dark">4 out of 5</td>
+                        <td width="12.5%" class="table-cell--dark">3 out of 5</td>
+                        <td width="12.5%" class="table-cell--dark">2 out of 5</td>
+                        <td width="12.5%" class="table-cell--dark">1 out of 5</td>
+                        <td width="12.5%" class="table-cell--dark">0 out of 5</td>
+                        <td width="12.5%" class="table-cell--dark">Total</td>
+                    </tr>
+                    <tr>
+                        <td width="12.5%" class="table-cell--medium">Day 1</td>
+                        <td width="12.5%">2</td>
+                        <td width="12.5%">3</td>
+                        <td width="12.5%">4</td>
+                        <td width="12.5%">6</td>
+                        <td width="12.5%">2</td>
+                        <td width="12.5%">3</td>
+                        <td width="12.5%">20</td>
+                    </tr>
+                    <tr class="top row">
+                        <td width="12.5%" class="table-cell--medium">Day 2</td>
+                        <td width="12.5%" style="color:darkcyan">2</td>
+                        <td width="12.5%">3</td>
+                        <td width="12.5%">5</td>
+                        <td width="12.5%">5</td>
+                        <td width="12.5%">4</td>
+                        <td width="12.5%">1</td>
+                        <td width="12.5%">20</td>
+                    </tr>
+                    <tr class="bottom row">
+                        <td width="12.5%" class="table-cell--medium">Day 3</td>
+                        <td width="12.5%" style="color:darkcyan">3</td>
+                        <td width="12.5%">3</td>
+                        <td width="12.5%">4</td>
+                        <td width="12.5%">5</td>
+                        <td width="12.5%">3</td>
+                        <td width="12.5%">2</td>
+                        <td width="12.5%">20</td>
+                    </tr>
+                    <tr>
+                        <td width="12.5%" class="table-cell--medium">Total</td>
+                        <td width="12.5%" style="color:darkmagenta">7</td>
+                        <td width="12.5%">9</td>
+                        <td width="12.5%">13</td>
+                        <td width="12.5%">16</td>
+                        <td width="12.5%">9</td>
+                        <td width="12.5%">6</td>
+                        <td width="12.5%">60</td>
+                    </tr>
+                </tbody>
+            </table>
+            </p>
+            <p>
+                No contestant received the same score on two different days. If a contestant is selected at random, what
+                is the probability that the selected contestant received a score of 5 on Day 2 or Day 3, given that the
+                contestant received a score of 5 on one of the three days?
+            </p>
+        </div>
+        <div class="carousel-list-wrapper">
+            <ul class="carousel-list">
+                <li class="carousel_item">
+                    <div class="content">
+                        <p>
+                            Probability is a ratio where a nominator is all succesful outcomes and denominator is all
+                            outcomes choosen.
+                        </p><p>
+                            The total number of contestants receiving score 5 is 7.
+                            The total number of contestants receiving score 5 on Day 2 or Day 3 is 5, so the ansver is 5 &#8725; 7
+                        </p>
+                    </div>
+                </li>
+            </ul>
+            <button class="carousel-button button--previous" type="button">&#9664;</button>
+            <button class="carousel-button button--next" type="button">&#9654;</button>
+        </div>
+    </section>
+
+    <section class="section vertical" id="task2">
+        <h3 class="section_title">Problem Solving. Sample task 2</h3>
+        <div class="raisedbox">
+            <p>
+                A square field measures 10 meters by 10 meters. Ten students each mark a randomly selected region of the
+                field; each region is square and has side lengths of 1
+                meter and no two regions overlap. The students count the earthworms contained in the soil to a depth of
+                5 centimeters beneath the ground's surface in each region.
+                The results are shown in the table below.
+            </p>
+            <table style="height: 208px;margin:0 auto" width="90%" class="bordered">
+                <thead>
+                    <tr>
+                        <td width="15%" class="table-cell--dark">Region</td>
+                        <td width="35%" class="table-cell--dark">Number of Earthworms</td>
+                        <td width="15%" class="table-cell--dark">Region</td>
+                        <td width="35%" class="table-cell--dark">Number of Earthworms</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>A</td>
+                        <td>107</td>
+                        <td>F</td>
+                        <td>141</td>
+                    </tr>
+                    <tr>
+                        <td>B</td>
+                        <td>147</td>
+                        <td>G</td>
+                        <td>150</td>
+                    </tr>
+                    <tr>
+                        <td>C</td>
+                        <td>146</td>
+                        <td>H</td>
+                        <td>154</td>
+                    </tr>
+                    <tr>
+                        <td>D</td>
+                        <td>135</td>
+                        <td>I</td>
+                        <td>176</td>
+                    </tr>
+                    <tr>
+                        <td>E</td>
+                        <td>149</td>
+                        <td>J</td>
+                        <td>166</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                Which of the following is a reasonable approximation of the number of earthworms to a depth of 5
+                centimeters beneath the ground's surface in the entire field?
+            </p>
+            <ul class="multi-choice math">
+                <li>150</li>
+                <li>1,500</li>
+                <li>15,000</li>
+                <li>150,000</li>
+            </ul>
+        </div>
+        <div class="carousel-list-wrapper">
+            <ul class="carousel-list">
+                <li class="carousel_item">
+                    <div class="content">
+                        <p>
+                            The volume of square field is: 10 &times; 10 &times; 0.005
+                            <math style="display:inline">
+                                <msup>
+                                    <mi>m</mi>
+                                    <mn>3</mn>
+                                </msup>
+                            </math>
+
+                            The volume of a region selected by each student is 1 &times; 1 &times; 0.005
+                            <math style="display:inline">
+                                <msup>
+                                    <mi>m</mi>
+                                    <mn>3</mn>
+                                </msup>
+                            </math>
+                            ,<br> therefor volume of square field is (10 &times; 10 &times; .005} &#8725; (10 &times; 1
+                            &times; 1
+                            &times; .005) &equals; 10 times bigger than region selected by all ten
+                            student.
+                        </p>
+                        <p>
+                            The total number earthworms in these ten regions is: 107 &plus; 147 &plus; 146 &plus; 135
+                            &plus; 149
+                            &plus; 141 &plus; 150 &plus; 154 &plus; 176 &plus; 166 &equals; 1471
+                        </p>
+                        <p>
+                            it would be a good approximation to multiply the total number earthworms counted by students
+                            by 10 to get<br> the total number of earthworms in the entire field: 1471 &times; 10 &equals; 14,710
+                            <br>
+                            The closest to this number option is (C), thus (C) is the correct answer.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+            <button class="carousel-button button--previous" type="button">&#9664;</button>
+            <button class="carousel-button button--next" type="button">&#9654;</button>
+        </div>
+    </section>
+    <script src="js/script.js"></script>
+    <script src="js/geometry.js"></script>
+    <script src="js/carousel.js"></script>
+    <script>
+        const satCommon = new SATcommon();
+        satCommon.primeCarousel();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,426 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Geometry</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/carousel.css">
+</head>
+
+<body>
+    <section class="section vertical" id="task1">
+        <h3 class="section_title">
+            Geometry. Sample task 1
+        </h3>
+        <div>
+            <div class="raisedbox">
+                <p>"O" is the center of the circle below. What is the value of angle <span
+                        style="color:red">&alpha;</span>
+                </p>
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                    width="480" height="480" viewBox="0 0 500 500">
+                    <g id="task1Group">
+                        <circle style="stroke:#010101;stroke-width:1.6871;stroke-miterlimit:10;" fill="none" cx="250"
+                            cy="250" r="245"></circle>
+                        <text x="47%" y="50%" text-anchor="middle" alignment-baseline="middle"
+                            fill="currentColor">O</text>
+
+                        <path id="arcA" fill="none" stroke="red" stroke-width="2"></path>
+                        <path id="arcB" fill="none" stroke="red" stroke-width="2"></path>
+                        <path id="arcC" fill="none" stroke="red" stroke-width="2"></path>
+                        <path id="arcO" fill="none" stroke="red" stroke-width="2"></path>
+                        <path id="arcO1" fill="none" stroke="red" stroke-width="2"></path>
+                        <path id="arcO2" fill="none" stroke="red" stroke-width="2"></path>
+                    </g>
+                </svg>
+            </div>
+            <div class="carousel-list-wrapper">
+                <ul class="carousel-list">
+                    <li class="carousel_item">
+                        <div class="content">
+                            <p>Let's mark two more angles: &beta; and &gamma; (see the picture)</p>
+                            <p>&gamma; is an agle that add &alpha; to 360°, so</p>
+                            <p class="math">
+                                <math>
+                                    <mrow>
+                                        <mi>&gamma;</mi>
+                                        <mo>=</mo>
+                                        <mn>360</mn>
+                                        <mo>-</mo>
+                                        <mi>&alpha;</mi>
+                                    </mrow>
+                                </math>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="carousel_item">
+                        <div class="content">
+                            <p>&beta; is an inscribed angle on circle and can be calculated using inscribed angle
+                                theorem</p>
+                            <p> <q>an inscribed angle on circle is half the measure of the central angle that forms the
+                                    same arc</q>
+                            </p>
+                            <p class="math">
+                                <math>
+                                    <mrow>
+                                        <mi>&beta;</mi>
+                                        <mo>=</mo>
+                                        <mfrac mathsize="130%">
+                                            <mi>&alpha;</mi>
+                                            <mn>2</mn>
+                                        </mfrac>
+                                    </mrow>
+                                </math>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="carousel_item">
+                        <div class="content">
+                            <p>The following equation is based on formula: sum of interior angles = (n - 2) > 180° where
+                                'n' is the number of sides of a polygon.</p>
+                            <p class="math">
+                                <math>
+                                    <mrow>
+                                        <mi>&beta;</mi>
+                                        <mo>+</mo>
+                                        <mi>&gamma;</mi>
+                                        <mo>+</mo>
+                                        <mn>2</mn>
+                                        <mo>*</mo>
+                                        <mn>20</mn>
+                                        <mo>=</mo>
+                                        <mn>360</mn>
+                                    </mrow>
+                                </math>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="carousel_item">
+                        <div class="content">
+                            <p>We can plug expressions for &beta; and &gamma; into the equation</p>
+                            <p class="math">
+                                <math>
+                                    <mrow>
+                                        <mfrac mathsize="130%">
+                                            <mi>&alpha;</mi>
+                                            <mn>2</mn>
+                                        </mfrac>
+                                        <mo>+</mo>
+                                        <mo>(</mo>
+                                        <mn>360</mn>
+                                        <mo>-</mo>
+                                        <mi>&alpha;</mi>
+                                        <mo>)</mo>
+                                        <mo>+</mo>
+                                        <mn>2</mn>
+                                        <mo>*</mo>
+                                        <mn>20</mn>
+                                        <mo>=</mo>
+                                        <mn>360</mn>
+                                    </mrow>
+                                </math>
+                            </p>
+                            <p>Solving for &alpha; gives <span style="color:red">&alpha; = 80°</span></p>
+                        </div>>
+                    </li>
+                    <!-- <li class="carousel_item">
+                        <div class="content next-task-button-wrap">
+                            <button class="next-task-button" data-task_number="1">Show next task</button>
+                        </div>
+                    </li> -->
+                </ul>
+                <button class="carousel-button button--previous" type="button">&#9664;</button>
+                <button class="carousel-button button--next" type="button">&#9654;</button>
+            </div>
+        </div>
+    </section>
+    <!-- <div class="h-divider">
+        <div class="shadow"></div>
+        <div class="text"><i>Solution</i></div>
+      </div> -->
+    <section class="section vertical" id="task2">
+        <h3 class="section_title">
+            Geometry. Sample task 2
+        </h3>
+        <div>
+            <div class="raisedbox">
+                <p>
+                    A circle in the xy-plane has equation
+                </p>
+                <!-- <mfenced open="(" close=")" separators=""><mrow> -->
+                <math style="margin: 0 auto; display:block">
+                    <mrow>
+                        <msup>
+                            <mrow>
+                                <mo>(</mo>
+                                <mrow>
+                                    <mi>x</mi>
+                                    <mo>+</mo>
+                                    <mn>3</mn>
+                                </mrow>
+                                <mo>)</mo>
+                            </mrow>
+                            <mn>2</mn>
+                        </msup>
+                        <mo>+</mo>
+                        <msup>
+                            <mrow>
+                                <mo>(</mo>
+                                <mrow>
+                                    <mi>y</mi>
+                                    <mo>-</mo>
+                                    <mn>1</mn>
+                                </mrow>
+                                <mo>)</mo>
+                            </mrow>
+                            <mn>2</mn>
+                        </msup>
+
+                        <mo>=</mo>
+                        <mn>25</mn>
+                    </mrow>
+                </math>
+                <p>
+                    Which of the following
+                    points does NOT lie in the interior of the circle?
+                </p>
+
+                <ul class="multi-choice">
+                    <li><span>(-7, 3)</span></li>
+                    <li><span>(-3, 1)</span></li>
+                    <li><span>(0, 0)</span></li>
+                    <li><span>(3, 2)</span></li>
+                </ul>
+            </div>
+            <div class="carousel-list-wrapper">
+                <ul class="carousel-list">
+                    <li class="carousel_item">
+                        <div class="content">
+                            <p>
+                                the circle equation above is in the center-radius form which looks like this:
+                            </p>
+                            <p class="math">
+                                <math>
+                                    <mrow>
+                                        <msup>
+                                            <mrow>
+                                                <mo>(</mo>
+                                                <mrow>
+                                                    <mi>x</mi>
+                                                    <mo>-</mo>
+                                                    <mn>h</mn>
+                                                </mrow>
+                                                <mo>)</mo>
+                                            </mrow>
+                                            <mn>2</mn>
+                                        </msup>
+                                        <mo>+</mo>
+                                        <msup>
+                                            <mrow>
+                                                <mo>(</mo>
+                                                <mrow>
+                                                    <mi>y</mi>
+                                                    <mo>-</mo>
+                                                    <mn>k</mn>
+                                                </mrow>
+                                                <mo>)</mo>
+                                            </mrow>
+                                            <mn>2</mn>
+                                        </msup>
+
+                                        <mo>=</mo>
+                                        <msup>
+                                            <mi>r</mi>
+                                            <mn>2</mn>
+                                        </msup>
+                                    </mrow>
+                                </math>
+                            </p>
+                            <p>where h and k are the center point's x and y coordinates; r is the radius of the circle
+                            </p>
+                        </div>
+                    </li>
+                    <li class="carousel_item">
+                        <div class="content">
+                            <p>For the given equation h =- 3 ank k = 1, so the circle center is at (-3, 1) and its
+                                radius equals 5 (r = 5) </p>
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                                width="480" height="480" viewBox="0 0 500 500">
+                                <defs>
+                                    <!-- A marker to be used as an arrowhead -->
+                                    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6"
+                                        markerHeight="6" orient="auto-start-reverse">
+                                        <path d="M 0 0 L 10 5 L 0 10 z" />
+                                    </marker>
+                                </defs>
+                                <g id="task2Group">
+                                    <circle style="stroke:#010101;stroke-width:1.6871;stroke-miterlimit:10;" fill="none"
+                                        cx="250" cy="250" r="100"></circle>
+                                    <circle style="stroke:red;stroke-width:1.6871;stroke-miterlimit:10;" fill="red"
+                                        cx="250" cy="250" r="1"></circle>
+                                    <text class="small" x="47%" y="50%" text-anchor="middle" alignment-baseline="middle"
+                                        fill="currentColor" dy="-1em">(-3, 1)</text>
+                                    <circle style="stroke:red;stroke-width:1.6871;stroke-miterlimit:10;" fill="none"
+                                        cx="350" cy="150" r="1"></circle>
+                                    <text class="small" x="350" y="150" text-anchor="middle" alignment-baseline="middle"
+                                        fill="currentColor" dy="-1em">p(x, y)</text>
+
+                                    <line x1="250" y1="250" x2="350" y2="150" stroke="#010101" />
+                                    <line x1="250" y1="250" x2="320" y2="180" stroke="#010101"
+                                        marker-end="url(#arrow)" />
+                                    <text class="small" x="350" y="230" text-anchor="middle" alignment-baseline="middle"
+                                        fill="currentColor" dy="-1em">r = 5</text>
+                                </g>
+                            </svg>
+                            <p>
+                                ... and the goal is to find all points from the given list that satisfied the following:
+                            </p>
+                            <p class="math">
+                                <math>
+                                    <mrow>
+                                        <msup>
+                                            <mrow>
+                                                <mo>(</mo>
+                                                <mrow>
+                                                    <msub>
+                                                        <mi>p</mi>
+                                                        <mi>x</mi>
+                                                    </msub>
+                                                    <mo>-</mo>
+                                                    <mo>(</mo>
+                                                    <mn>-3</mn>
+                                                    <mo>)</mo>
+                                                </mrow>
+                                                <mo>)</mo>
+                                            </mrow>
+                                            <mn>2</mn>
+                                        </msup>
+                                        <mo>+</mo>
+                                        <msup>
+                                            <mrow>
+                                                <mo>(</mo>
+                                                <mrow>
+                                                    <msub>
+                                                        <mi>p</mi>
+                                                        <mi>y</mi>
+                                                    </msub>
+                                                    <mo>-</mo>
+                                                    <mn>1</mn>
+                                                </mrow>
+                                                <mo>)</mo>
+                                            </mrow>
+                                            <mn>2</mn>
+                                        </msup>
+                                        <mo>></mo>
+                                        <mn>25</mn>
+                                    </mrow>
+                                </math>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="carousel_item">
+                        <div class="content">
+                            <p>
+                                Let's plug in the point A (-7, 3)
+                            </p>
+                            <p class="math">
+                                <math>
+                                    <mrow>
+                                        <msup>
+                                            <mrow>
+                                                <mo>(</mo>
+                                                <mrow>
+                                                    <mn>-7</mn>
+                                                    <mo>-</mo>
+                                                    <mo>(</mo>
+                                                    <mn>-3</mn>
+                                                    <mo>)</mo>
+                                                </mrow>
+                                                <mo>)</mo>
+                                            </mrow>
+                                            <mn>2</mn>
+                                        </msup>
+                                        <mo>+</mo>
+                                        <msup>
+                                            <mrow>
+                                                <mo>(</mo>
+                                                <mrow>
+                                                    <mn>3</mn>
+                                                    <mo>-</mo>
+                                                    <mn>1</mn>
+                                                </mrow>
+                                                <mo>)</mo>
+                                            </mrow>
+                                            <mn>2</mn>
+                                        </msup>
+                                        <mo>=</mo>
+                                        <mn>20</mn>
+                                        <mo>
+                                            << /mo>
+                                                <mn>25</mn>
+                                    </mrow>
+                                </math>
+                            </p>
+                            <p>
+                                ...but point D (3, 2) works
+                            </p>
+                            <p class="math">
+                                <math>
+                                    <mrow>
+                                        <msup>
+                                            <mrow>
+                                                <mo>(</mo>
+                                                <mrow>
+                                                    <mn>3</mn>
+                                                    <mo>-</mo>
+                                                    <mo>(</mo>
+                                                    <mn>-3</mn>
+                                                    <mo>)</mo>
+                                                </mrow>
+                                                <mo>)</mo>
+                                            </mrow>
+                                            <mn>2</mn>
+                                        </msup>
+                                        <mo>+</mo>
+                                        <msup>
+                                            <mrow>
+                                                <mo>(</mo>
+                                                <mrow>
+                                                    <mn>2</mn>
+                                                    <mo>-</mo>
+                                                    <mn>1</mn>
+                                                </mrow>
+                                                <mo>)</mo>
+                                            </mrow>
+                                            <mn>2</mn>
+                                        </msup>
+                                        <mo>=</mo>
+                                        <mn>37</mn>
+                                        <mo>></mo>
+                                        <mn>25</mn>
+                                    </mrow>
+                                </math>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+                <button class="carousel-button button--previous" type="button">&#9664;</button>
+                <button class="carousel-button button--next" type="button">&#9654;</button>
+            </div>
+        </div>
+    </section>
+    <script src="js/script.js"></script>
+    <script src="js/geometry.js"></script>
+    <script src="js/carousel.js"></script>
+    <script>
+        const satCommon = new SATcommon();
+        satCommon.primeCarousel(["arcC", "arcCText", "arcO1", "arcO2", "arcO1Text"]);
+
+        const geometry = new Geometry();
+        geometry.draw();
+    </script>
+</body>
+
+</html>

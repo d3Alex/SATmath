@@ -1,0 +1,704 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Algebra</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/carousel.css">
+    <style media="screen" type="text/css">
+        math.size_1 {
+            font-size: 1em
+        }
+
+        math.size_2 {
+            font-size: 2em
+        }
+
+        math.size_3 {
+            font-size: 3em
+        }
+
+        math.size_4 {
+            font-size: 4em
+        }
+
+        math.size_5 {
+            font-size: 5em
+        }
+
+        math .constant {
+            /* font-weight: bold */
+            color: red;
+        }
+
+        /* .a {
+            color: red
+        }
+
+        .b {
+            color: green
+        }
+
+        .c {
+            color: blue
+        }
+
+        .d {
+            color: orange;
+        } */
+
+        .dot_operator {
+            color: gray
+        }
+    </style>
+</head>
+
+<body>
+    <section class="section vertical" id="task1">
+        <h3 class="section_title">
+            Algebra. Sample task 1
+        </h3>
+        <div class="raisedbox">
+            <p>Derek is the 11th tallest person in the room and the 9th shortest. How many people are in the room? </p>
+
+            <div class="carousel-list-wrapper">
+                <ul class="carousel-list">
+                    <li class="carousel_item">
+                        <div class="content">
+                            <p>To solve this question let's draw the line where points are heights of people in the
+                                room:</p>
+                            <p>
+                                <svg width="505" height="130" id="svg_algebra1">
+                                    <defs>
+                                        <!-- A marker to be used as an arrowhead -->
+                                        <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6"
+                                            markerHeight="6" orient="auto-start-reverse">
+                                            <path d="M 0 0 L 10 5 L 0 10 z" />
+                                        </marker>
+                                    </defs>
+                                </svg>
+                            </p>
+                            <p>Derek is the 11th tallest person in the room. Therefore there are 10 people taller than
+                                Derek</p>
+                            <p>Derek is the 9th shortest person in the room. Therefore there are 8 people shorter than
+                                Derek</p>
+                            <p>
+                                The get the total number of people in the room, we need to add 8 (shorter than Derek), 1
+                                (Derek) and 10
+                                (taller than Derek)
+                            </p>
+                            <p>So, the total number of people in the room is 19.</p>
+                        </div>
+                    </li>
+                    <!-- <li class="carousel_item">
+                        <div class="content next-task-button-wrap">
+                            <button class="next-task-button" data-task_number="1">Show next task</button>
+                        </div>
+                    </li> -->
+                </ul>
+                <button class="carousel-button button--previous" type="button">&#9664;</button>
+                <button class="carousel-button button--next" type="button">&#9654;</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section vertical" id="task2">
+        <h3 class="section_title">
+            Algebra. Sample task 2
+        </h3>
+        <div class="raisedbox">
+            <p>
+                The number of trees in a forest decreased by 25% from 2005 to 2006. If there were n trees in the forest
+                in 2006, how many trees were there in 2005, in terms of n?
+            </p>
+            <ul class="multi-choice math">
+                <li>
+                    <math>
+                        <mfrac>
+                            <mrow>
+                                <mn>6</mn>
+                                <mo>&InvisibleTimes;</mo>
+                                <mi>n</mi>
+                            </mrow>
+                            <mrow>
+                                <mn>5</mn>
+                            </mrow>
+                        </mfrac>
+                    </math>
+                </li>
+                <li>
+                    <math>
+                        <mfrac>
+                            <mrow>
+                                <mn>5</mn>
+                                <mo>&InvisibleTimes;</mo>
+                                <mi>n</mi>
+                            </mrow>
+                            <mn>4</mn>
+                        </mfrac>
+                    </math>
+                </li>
+                <li>
+                    <math>
+                        <mfrac>
+                            <mrow>
+                                <mn>4</mn>
+                                <mo>&InvisibleTimes;</mo>
+                                <mi>n</mi>
+                            </mrow>
+                            <mn>3</mn>
+                        </mfrac>
+                    </math>
+                </li>
+                <li>
+                    <math>
+                        <mfrac>
+                            <mrow>
+                                <mn>3</mn>
+                                <mo>&InvisibleTimes;</mo>
+                                <mi>n</mi>
+                            </mrow>
+                            <mn>2</mn>
+                        </mfrac>
+                    </math>
+                </li>
+            </ul>
+        </div>
+        <div class="carousel-list-wrapper">
+            <ul class="carousel-list">
+                <li class="carousel_item">
+                    <div class="content">
+                        <p>
+                            Let's x be the number of trees in 2005. The number of trees in 2006 is 75% of x, which can
+                            be
+                            expressed as 0.75x or 3x/4, thus n = 3x/4. Solving n = 3x/4 for x gives x = 4n/3 Therefore,
+                            the correct
+                            answer is C: 4n/3
+                        </p>
+                    </div>
+                </li>
+            </ul>
+            <button class="carousel-button button--previous" type="button">&#9664;</button>
+            <button class="carousel-button button--next" type="button">&#9654;</button>
+        </div>
+    </section>
+
+    <section class="section vertical" id="task3">
+        <h3 class="section_title">
+            Algebra. Sample task 3
+        </h3>
+        <div class="raisedbox">
+            <p>
+                Marisa needs to hire at least 10 staff members for an upcoming project. The staff members will be made
+                up of junior directors, who will be paid $640 per week, and senior directors, who will be paid $880 per
+                week. If Marisa's budget for staff salaries is $25,600 per month, how many junior directors and senior
+                directors can she hire?
+            </p>
+        </div>
+        <div class="carousel-list-wrapper">
+            <ul class="carousel-list">
+                <li class="carousel_item">
+                    <div class="content">
+                        <p>
+                            To find the number of junior directors and senior directors Marisa can hire, we need to:
+                        </p><p>
+                            1: Convert the monthly budget to a weekly budget
+                            Monthly budget / 4 weeks per month = Weekly budget
+
+                            $25,600 / 4 = $6,400 weekly budget
+                        </p><p>
+                            2: Allocate the weekly budget between junior directors and senior directors
+                            Let x be a number of junior directors and y be a number of senior directors
+                            Weekly budget = 640x + 880y
+                        </p>
+                    </div>
+                </li>
+                <li class="carousel_item">
+                    <div class="content">
+                        3. describe the task conditions as system inequalities:
+                        <math>
+                            <mrow>
+                                <mo>{</mo>
+                                <mtable>
+                                    <mtr>
+                                        <mpadded lspace="0.2em" voffset="0.3ex">
+                                            <mi>x</mi>
+                                            <mo>+</mo>
+                                            <mi>y</mi>
+                                            <mo>&#8805;</mo>
+                                            <mn>10</mn>
+                                        </mpadded>
+                                    </mtr>
+                                    <mtr>
+                                        <mpadded lspace="0.2em" voffset="-0.7ex">
+                                            <mn>640</mn>
+                                            <mo>&InvisibleTimes;</mo>
+                                            <mi>x</mi>
+                                            <mo>+</mo>
+                                            <mn>880</mn>
+                                            <mo>&InvisibleTimes;</mo>
+                                            <mi>y</mi>
+                                            <mo>&#8804;</mo>
+                                            <mn>6400</mn>
+                                        </mpadded>
+                                    </mtr>
+                                </mtable>
+                            </mrow>
+                        </math>
+                        <p>
+                            Let's start with x = 10 and y = 0, which satisfy both conditions and is the upper limit of
+                            the second
+                            inequality.
+                            Any increase of y that keeps the first condition satisfied (x = 9 and y = 1 for example),
+                            will break the
+                            second condition.
+                            therefor x = 10 and y = 0 is the only solution and Marisa can hire 10 junior directors and 0
+                            senior
+                            directors with her $25,600 per month budget
+                        </p>
+                    </div>
+                </li>
+            </ul>
+            <button class="carousel-button button--previous" type="button">&#9664;</button>
+            <button class="carousel-button button--next" type="button">&#9654;</button>
+        </div>
+    </section>
+
+
+    <section class="section vertical" id="task4">
+        <h3 class="section_title">
+            Algebra. Sample task 4
+        </h3>
+        <div class="raisedbox">
+            <math style="margin: 0 auto; display:block">
+                <mrow>
+                    <mi>a</mi>
+                    <mo>&InvisibleTimes;</mo>
+                    <msup>
+                        <mi>x</mi>
+                        <mn>3</mn>
+                    </msup>
+                    <mo>+</mo>
+                    <mi>b</mi>
+                    <mo>&InvisibleTimes;</mo>
+                    <msup>
+                        <mi>x</mi>
+                        <mn>2</mn>
+                    </msup>
+                    <mo>+</mo>
+                    <mi>c</mi>
+                    <mo>&InvisibleTimes;</mo>
+                    <mi>x</mi>
+                    <mo>+</mo>
+                    <mi>d</mi>
+                    <mo>=</mo>
+                    <mn>0</mn>
+                </mrow>
+            </math>
+            <p>
+                In the equation above, a, b, c, and d are constants.
+                If the equation has roots -1 , -3 , and 5, which of the
+                following is a factor of
+                <math style="display:inline-block">
+                    <mrow>
+                        <mi class="constant a">a</mi>
+                        <mo>&InvisibleTimes;</mo>
+                        <msup>
+                            <mi>x</mi>
+                            <mn>3</mn>
+                        </msup>
+                        <mo>+</mo>
+                        <mi class="constant b">b</mi>
+                        <mo>&InvisibleTimes;</mo>
+                        <msup>
+                            <mi>x</mi>
+                            <mn>2</mn>
+                        </msup>
+                        <mo>+</mo>
+                        <mi class="constant c">c</mi>
+                        <mo>&InvisibleTimes;</mo>
+                        <!-- <mo class="dot_operator">&#x22c5;</mo> -->
+                        <mi>x</mi>
+                        <mo>+</mo>
+                        <mi class="constant d">d</mi>
+                        <mo>=</mo>
+                        <mn>0</mn>
+                        <mo>?</mo>
+                    </mrow>
+                </math>
+            </p>
+            <ul class="multi-choice math">
+                <li>
+                    <math>
+                        <mi>x</mi>
+                        <mo>-</mo>
+                        <mi>1</mi>
+                    </math>
+                </li>
+                <li>
+                    <math>
+                        <mi>x</mi>
+                        <mo>+</mo>
+                        <mi>1</mi>
+                    </math>
+                </li>
+                <li>
+                    <math>
+                        <mi>x</mi>
+                        <mo>-</mo>
+                        <mi>3</mi>
+                    </math>
+                </li>
+                <li>
+                    <math>
+                        <mi>x</mi>
+                        <mo>+</mo>
+                        <mi>5</mi>
+                    </math>
+                </li>
+            </ul>
+        </div>
+        <div class="carousel-list-wrapper">
+            <ul class="carousel-list">
+                <li class="carousel_item">
+                    <div class="content">
+                        <p>
+                            The roots of the equation are given and are: -1, -3, and 5
+                            To find a factor of the original equation, we can use the roots. The factors will be of the
+                            form (x -
+                            root), where the root is one of the given values.
+                        </p>
+                        <p>
+                            The possible factors are:
+
+                            (x + 1), since -1 is a root
+                            (x + 3), since -3 is a root
+                            (x - 5), since 5 is a root
+                        </p>
+                        <p>
+                            x + 1 is a the only factor at the answer choices and therefore the correct answer is: B) x +
+                            1
+                        </p>
+                    </div>
+                </li>
+            </ul>
+            <button class="carousel-button button--previous" type="button">&#9664;</button>
+            <button class="carousel-button button--next" type="button">&#9654;</button>
+        </div>
+    </section>
+
+    <section class="section vertical" id="task5">
+        <h2 class="section_title">
+            <h3 class="section_title">
+                Algebra. Sample task 5
+            </h3>
+            <div class="raisedbox">
+                <p>
+                    The function f is defined by
+                    <math style="display:inline">
+                        <mrow>
+                            <mi>f</mi>
+                            <mo>(</mo>
+                            <mi>x</mi>
+                            <mo>)</mo>
+                            <mo>=</mo>
+                            <mo>(</mo>
+                            <mi>x</mi>
+                            <mo>+</mo>
+                            <mn>2</mn>
+                            <mo>)</mo>
+                            <mo>&InvisibleTimes;</mo>
+                            <mo>(</mo>
+                            <mi>x</mi>
+                            <mo>+</mo>
+                            <mn>1</mn>
+                            <mo>)</mo>
+                        </mrow>
+                    </math>
+                    The graph of f in the xy-plane is a parabola.
+                    <!-- What is the value of the x-coordinate of the vertex of the parabola?    -->
+                    Which of the following intervals contains the x-coordinate of the vertex of the graph of f ?
+
+                <ul class="multi-choice math">
+                    <!-- <li>-4 < x < -3</li>
+                <li>-3 < x < 1 </li>
+                <li>1 < x < 3</li>
+                <li>3 < x < 4</li> -->
+                    <li>
+                        <math>
+                            <mi>-4</mi>
+                            <mo>&lt;</mo>
+                            <mi>x</mi>
+                            <mo>&lt;</mo>
+                            <mi>-2</mi>
+                        </math>
+                    </li>
+                    <li>
+                        <math>
+                            <mi>-3</mi>
+                            <mo>&lt;</mo>
+                            <mi>x</mi>
+                            <mo>&lt;</mo>
+                            <mi>1</mi>
+                        </math>
+                    </li>
+                    <li>
+                        <math>
+                            <mi>1</mi>
+                            <mo>&lt;</mo>
+                            <mi>x</mi>
+                            <mo>&lt;</mo>
+                            <mi>3</mi>
+                        </math>
+                    </li>
+                    <li>
+                        <math>
+                            <mi>3</mi>
+                            <mo>&lt;</mo>
+                            <mi>x</mi>
+                            <mo>&lt;</mo>
+                            <mi>4</mi>
+                        </math>
+                    </li>
+                </ul>
+                </p>
+            </div>
+            <div class="carousel-list-wrapper">
+                <ul class="carousel-list">
+                    <li class="carousel_item">
+                        <div class="content">
+                            <p>
+                                To find the x-coordinate of the vertex of the parabola, we need to find the vertex of
+                                the quadratic
+                                function f(x).</p>
+
+                            <p>X-coordinate of the vertex of a quadratic function
+                                <math style="display:inline">
+                                    <mrow>
+                                        <mi>f</mi>
+                                        <mo>(</mo>
+                                        <mi>x</mi>
+                                        <mo>)</mo>
+                                        <mo>=</mo>
+                                        <mi>a</mi>
+                                        <mo>&InvisibleTimes;</mo>
+                                        <msup>
+                                            <mi>x</mi>
+                                            <mn>2</mn>
+                                        </msup>
+                                        <mo>+</mo>
+                                        <mi>b</mi>
+                                        <mo>&InvisibleTimes;</mo>
+                                        <mi>x</mi>
+                                        <mo>+</mo>
+                                        <mi>c</mi>
+
+                                    </mrow>
+                                </math>
+                                is given by the formula:
+                                <math style="display:inline">
+                                    <mfrac>
+                                        <mrow>
+                                            <mo>-</mo>
+                                            <mn>b</mn>
+                                        </mrow>
+                                        <mrow>
+                                            <mn>2</mn>
+                                            <mo>&InvisibleTimes;</mo>
+                                            <mi>a</mi>
+                                        </mrow>
+
+                                    </mfrac>
+                                </math>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="carousel_item">
+                        <div class="content">
+                            <p>
+                                Let's rewrite the function
+                                <math style="display:inline">
+                                    <mrow>
+                                        <mi>f</mi>
+                                        <mo>(</mo>
+                                        <mi>x</mi>
+                                        <mo>)</mo>
+                                        <mo>=</mo>
+                                        <mo>(</mo>
+                                        <mi>x</mi>
+                                        <mo>+</mo>
+                                        <mn>2</mn>
+                                        <mo>)</mo>
+                                        <mo>&InvisibleTimes;</mo>
+                                        <mo>(</mo>
+                                        <mi>x</mi>
+                                        <mo>+</mo>
+                                        <mn>1</mn>
+                                        <mo>)</mo>
+                                    </mrow>
+                                </math>
+                                in standard quadratic form:
+                                <!-- f(x) = (x+2)(x+1) -->
+                                <!-- f(x) = x^2 + 3x + 2  -->
+
+                                <math style="display:inline">
+                                    <mrow>
+                                        <mi>f</mi>
+                                        <mo>(</mo>
+                                        <mi>x</mi>
+                                        <mo>)</mo>
+                                        <mo>=</mo>
+                                        <msup>
+                                            <mi>x</mi>
+                                            <mn>2</mn>
+                                        </msup>
+                                        <mo>+</mo>
+                                        <mi>3</mi>
+                                        <mo>&InvisibleTimes;</mo>
+                                        <mi>x</mi>
+                                        <mo>+</mo>
+                                        <mi>2</mi>
+                                    </mrow>
+                                </math>
+
+                                Comparing this to the standard quadratic form
+                                <math style="display:inline">
+                                    <mrow>
+                                        <mi>f</mi>
+                                        <mo>(</mo>
+                                        <mi>x</mi>
+                                        <mo>)</mo>
+                                        <mo>=</mo>
+                                        <mi>a</mi>
+                                        <mo>&InvisibleTimes;</mo>
+                                        <msup>
+                                            <mi>x</mi>
+                                            <mn>2</mn>
+                                        </msup>
+                                        <mo>+</mo>
+                                        <mi>b</mi>
+                                        <mo>&InvisibleTimes;</mo>
+                                        <mi>x</mi>
+                                        <mo>+</mo>
+                                        <mi>c</mi>
+
+                                    </mrow>
+                                </math>
+                                , we can see that:
+                                </br>
+                                <math style="margin: 0 auto; display:block; margin-top:0.3em">
+                                    <mtable>
+                                        <mtr>
+                                            <mi>a</mi>
+                                            <mo>=</mo>
+                                            <mn>1</mn>
+                                        </mtr>
+                                        <mtr>
+                                            <mi>b</mi>
+                                            <mo>=</mo>
+                                            <mn>3</mn>
+                                        </mtr>
+                                        <mtr>
+                                            <mi>c</mi>
+                                            <mo>=</mo>
+                                            <mn>2</mn>
+                                        </mtr>
+                                    </mtable>
+                                </math>
+                                </br>Plugging these values into the formula for the x-coordinate of the vertex:
+                                <math style="display:inline">
+                                    <mfrac>
+                                        <mrow>
+                                            <mo>-</mo>
+                                            <mn>b</mn>
+                                        </mrow>
+                                        <mrow>
+                                            <mn>2</mn>
+                                            <mo>&InvisibleTimes;</mo>
+                                            <mi>a</mi>
+                                        </mrow>
+
+                                    </mfrac>
+                                </math> gives
+                                <math style="display:inline">
+                                    <mfrac>
+                                        <mrow>
+                                            <mo>-</mo>
+                                            <mn>3</mn>
+                                        </mrow>
+                                        <mrow>
+                                            <mn>2</mn>
+                                            <mo>*</mo>
+                                            <mi>1</mi>
+                                        </mrow>
+
+                                    </mfrac>
+                                </math>
+                                , therefore, the x-coordinate of the vertex of the parabola is
+                                <math style="display:inline">
+                                    <mfrac>
+                                        <mrow>
+                                            <mo>-</mo>
+                                            <mn>3</mn>
+                                        </mrow>
+                                        <mrow>
+                                            <mn>2</mn>
+                                        </mrow>
+                                    </mfrac>
+                                </math>, and correct interval is B)
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+                <button class="carousel-button button--previous" type="button">&#9664;</button>
+                <button class="carousel-button button--next" type="button">&#9654;</button>
+            </div>
+    </section>
+    <script src="js/script.js"></script>
+    <script src="js/geometry.js"></script>
+    <script src="js/carousel.js"></script>
+    <script>
+        const satCommon = new SATcommon();
+        satCommon.primeCarousel();
+
+        function drawAlgebra() {
+            const geometry = new Geometry();
+            const svg_algebra1 = document.getElementById("svg_algebra1");
+            const svg_width = 500;
+            const svg_ticks = 19;
+            const svg_ticks_width = svg_width / svg_ticks;
+            let l = geometry.createSVGLineBetweenPoints(0, 50, 8 * svg_ticks_width - 3, 50, "#010101", 1.6871);
+            l.setAttribute("marker-start", "url(#arrow)");
+            l.setAttribute("marker-end", "url(#arrow)");
+            svg_algebra1.append(l);
+            l = geometry.createSVGLineBetweenPoints(8 * svg_ticks_width + 3, 50, 500, 50, "#010101", 1.6871);
+            l.setAttribute("marker-start", "url(#arrow)");
+            l.setAttribute("marker-end", "url(#arrow)");
+            svg_algebra1.append(l);
+
+            const text8 = geometry.createSVGText(4 * svg_ticks_width, 50, "8", "middle", "0m", "-0.2em");
+            svg_algebra1.append(text8);
+            const text1 = geometry.createSVGText(8 * svg_ticks_width, 50, "1", "middle", "0", "-0.2em");
+            svg_algebra1.append(text1);
+            const text10 = geometry.createSVGText(14 * svg_ticks_width, 50, "10", "middle", "0", "-0.2em");
+            svg_algebra1.append(text10);
+
+
+            l = geometry.createSVGLineBetweenPoints(0, 100, 500, 100, "#010101", 1.6871);
+            l.setAttribute("marker-end", "url(#arrow)");
+            svg_algebra1.append(l);
+            for (let index = 0; index < svg_ticks; index++) {
+                l = geometry.createSVGLineBetweenPoints(index * svg_ticks_width, 95, index * svg_ticks_width, 105, "#010101", 1.6871);
+                svg_algebra1.append(l);
+                if (index == 8) {
+                    const dot = geometry.createSVGCircle(index * svg_ticks_width, 100, 5, "red");
+                    svg_algebra1.appendChild(dot);
+                }
+            }
+        }
+        drawAlgebra();
+
+    </script>
+</body>
+
+</html>
