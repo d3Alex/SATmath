@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    Scientific Notation
+  </title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      border: none;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      font-size: 1.5em;
+    }
+
+    /* Page styling */
+    body {
+      background: #fefefe;
+      font-family: "Noto sans", sans-serif;
+      /* text-align: center; */
+      margin: 3em 0;
+    }
+
+    .container {
+      display: grid;
+      place-items: center;
+      /* Horizontal and vertical centering */
+      height: 100vh;
+    }
+
+    .panel {
+      /* Add styles for your panel */
+      font-weight: 700;
+    }
+
+    .list_container {
+      display: inline-block;
+      padding: 10px;
+      margin: 10px;
+      background-color: #f5f5f5;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .list_container ul {
+      list-style-type: disc;
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .list_container li {
+      margin-bottom: 5px;
+    }
+
+    .input_container {
+      position: relative;
+      font-family: BlinkMacSystemFont;
+    }
+
+    .input_container label {
+      position: absolute;
+      margin: 0 5px;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: -1;
+      background-color: #fff;
+      padding: 0 2px;
+      /* color: #aaa; */
+      color: #29c0d5;
+      transition: .2s;
+    }
+
+    .input_container input {
+      border: 1px solid #aaa;
+      border-radius: 5px;
+      background-color: transparent;
+      padding: 5px;
+      height: 3em;
+      width: 98%;
+    }
+
+    .input_container input:focus {
+      outline: none;
+    }
+
+    /* Focus or containing value (placeholder not shown) */
+    .input_container input:focus+label,
+    .input_container input:not(:placeholder-shown)+label {
+      top: -8px;
+      font-size: 8px;
+      z-index: 1;
+    }
+
+    /* Only when focused */
+    .input_container input:focus+label {
+      color: rgb(15, 156, 116);
+    }
+
+    .input_container input:focus {
+      border-color: rgb(15, 156, 116);
+    }
+
+    /* The button-maker */
+    /* How to include it */
+    .btn-right {
+      background: none;
+      border: 0;
+      font-size: 22px;
+      line-height: 2em;
+      position: relative;
+      width: 8em;
+      height: 2em;
+    }
+
+    .btn-right a {
+      color: #fff;
+      text-decoration: none;
+      position: relative;
+      z-index: 10;
+    }
+
+    .btn-right::before,
+    .btn-right::after {
+      background: #29c0d5;
+      border-radius: 2px;
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      transition: all 1s;
+      height: 1em;
+    }
+
+    .btn-right::before {
+      box-shadow: -1px 1px 0 #1897c0, -2px 2px 0 #1897c0, -3px 3px 0 #1897c0, -4px 4px 0 #1897c0;
+      transform: skew(45deg);
+      top: 0;
+    }
+
+    .btn-right::after {
+      box-shadow: 1px 1px 0 #1897c0, 2px 2px 0 #1897c0, 3px 3px 0 #1897c0, 4px 4px 0 #1897c0;
+      transform: skew(-45deg);
+      bottom: 0;
+    }
+
+    .btn-right:hover::before,
+    .btn-right:hover::after {
+      background: #68d3e2;
+    }
+
+    .btn-right:focus {
+      outline: 0;
+    }
+
+    .btn-right:focus::before,
+    .btn-right:focus::after {
+      background: #68d3e2;
+    }
+
+    .btn-left {
+      background: none;
+      border: 0;
+      font-size: 22px;
+      line-height: 2em;
+      position: relative;
+      width: 8em;
+      height: 2em;
+    }
+
+    .btn-left a {
+      color: #fff;
+      text-decoration: none;
+      position: relative;
+      z-index: 10;
+    }
+
+    .btn-left::before,
+    .btn-left::after {
+      background: #e4135d;
+      border-radius: 2px;
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      transition: all 1s;
+      height: 1em;
+    }
+
+    .btn-left::before {
+      box-shadow: -1px 1px 0 #c81163, -2px 2px 0 #c81163, -3px 3px 0 #c81163, -4px 4px 0 #c81163;
+      transform: skew(45deg);
+      bottom: 0;
+      z-index: 1;
+    }
+
+    .btn-left::after {
+      box-shadow: 1px 1px 0 #c81163, 2px 2px 0 #c81163, 3px 3px 0 #c81163, 4px 4px 0 #c81163;
+      transform: skew(-45deg);
+      top: 0;
+    }
+
+    .btn-left:hover::before,
+    .btn-left:hover::after {
+      background: #f1538b;
+    }
+
+    .btn-left:focus {
+      outline: 0;
+    }
+
+    .btn-left:focus::before,
+    .btn-left:focus::after {
+      background: #f1538b;
+    }
+
+    .btn-up {
+      background: none;
+      border: 0;
+      font-size: 22px;
+      line-height: 3em;
+      position: relative;
+      width: 4em;
+      height: 3em;
+      transform: rotate(-90deg);
+    }
+
+    .btn-up a {
+      color: #fff;
+      text-decoration: none;
+      position: relative;
+      z-index: 10;
+    }
+
+    .btn-up::before,
+    .btn-up::after {
+      background: #e4135d;
+      border-radius: 2px;
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      transition: all 1s;
+      height: 1.5em;
+    }
+
+    .btn-up::before {
+      box-shadow: -1px 1px 0 #c81163, -2px 2px 0 #c81163, -3px 3px 0 #c81163, -4px 4px 0 #c81163;
+      transform: skew(45deg);
+      top: 0;
+    }
+
+    .btn-up::after {
+      box-shadow: 1px 1px 0 #c81163, 2px 2px 0 #c81163, 3px 3px 0 #c81163, 4px 4px 0 #c81163;
+      transform: skew(-45deg);
+      bottom: 0;
+    }
+
+    .btn-up:hover::before,
+    .btn-up:hover::after {
+      background: #f1538b;
+    }
+
+    .btn-up:focus {
+      outline: 0;
+    }
+
+    .btn-up:focus::before,
+    .btn-up:focus::after {
+      background: #f1538b;
+    }
+
+    .btn-down {
+      background: none;
+      border: 0;
+      font-size: 22px;
+      line-height: 4em;
+      position: relative;
+      width: 6em;
+      height: 4em;
+      transform: rotate(90deg);
+      margin-top: 3em;
+    }
+
+    .btn-down a {
+      color: #fff;
+      text-decoration: none;
+      position: relative;
+      z-index: 10;
+    }
+
+    .btn-down::before,
+    .btn-down::after {
+      background: #29c0d5;
+      border-radius: 2px;
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      transition: all 1s;
+      height: 2em;
+    }
+
+    .btn-down::before {
+      box-shadow: -1px 1px 0 #1897c0, -2px 2px 0 #1897c0, -3px 3px 0 #1897c0, -4px 4px 0 #1897c0;
+      transform: skew(45deg);
+      top: 0;
+    }
+
+    .btn-down::after {
+      box-shadow: 1px 1px 0 #1897c0, 2px 2px 0 #1897c0, 3px 3px 0 #1897c0, 4px 4px 0 #1897c0;
+      transform: skew(-45deg);
+      bottom: 0;
+    }
+
+    .btn-down:hover::before,
+    .btn-down:hover::after {
+      background: #68d3e2;
+    }
+
+    .btn-down:focus {
+      outline: 0;
+    }
+
+    .btn-down:focus::before,
+    .btn-down:focus::after {
+      background: #68d3e2;
+    }
+
+    @-webkit-keyframes zoom {
+      25% {
+        transform: scale3d(1.5, 1.5, 0);
+      }
+
+      50% {
+        transform: scale3d(1, 1, 0);
+      }
+
+      75% {
+        transform: scale3d(1.25, 1.25, 0);
+      }
+    }
+
+    @keyframes zoom {
+      25% {
+        transform: scale3d(1.5, 1.5, 0);
+      }
+
+      50% {
+        transform: scale3d(1, 1, 0);
+      }
+
+      75% {
+        transform: scale3d(1.25, 1.25, 0);
+      }
+    }
+
+    @-webkit-keyframes spin {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spin {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+
+
+    h1 {
+      color: #0b1421;
+      font-weight: 400;
+    }
+
+    /* button a {
+      top: -2px;
+    } */
+
+    fieldset {
+      border-color: #68d3e2;
+      border-style: solid;
+      padding: 1em;
+    }
+
+    fieldset legend {
+      color: #68d3e2;
+      margin: 0 1em 0 1em
+    }
+
+    fieldset {
+      /* border: 1px solid#ddd; */
+      padding: 12px;
+      margin-top: 2em;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    legend {
+      font-size: 18px;
+      padding: 0 10px;
+    }
+
+    fieldset span,
+    fieldset button {
+      flex-grow: 1;
+      width: 33%;
+      /* height: 100px; */
+    }
+  </style>
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+</head>
+
+<body>
+  <div class="container">
+    <div class="panel">
+      <p>
+        Scientific notation is a way of expressing numbers that are too large or too small to be conveniently written in
+        decimal form.
+        <br>It represents numbers as a product of two parts:
+      <div class="list_container">
+        <ul>
+          <li>A coefficient (a number between 1 and 10)</li>
+          <li>A base (typically 10) raised to an exponent</li>
+        </ul>
+      </div>
+      </p>
+      <p>
+        The general form is: m × 10^n Where:
+      <div class="list_container">
+        <ul>
+          <li>m is the coefficient (a number between 1 and 10)</li>
+          <li>n is the exponent (an integer that represents the order of magnitude)</li>
+        </ul>
+      </div>
+      </p>
+      <p>
+        The character typically used to denote scientific notation is the lowercase letter 'e'.
+        <br>In scientific notation,
+        a number is expressed as a coefficient multiplied by a power of 10.
+        The letter 'e' represents "times 10 raised to the power of". For example:
+      <pre>
+        6.022e23 means 6.022 x 10^23 
+        1.6e-35 means 1.6 x 10^-35
+      </pre>
+      </p>
+
+      <p>To convert a number to scientific notation try <code>123456.789</code> or <code>0.00000012</code> for example</p>
+
+      <p>Convert a number from scientific notation try <code>1.23e+5</code> or <code>1.23e-7</code> for example</p>
+
+      <fieldset class="field_set" id="to">
+        <legend>Convert a number to scientific notation:</legend>
+        <span class="input_container">
+          <input type="text" placeholder=" " onfocus="document.getElementById('to').getElementsByTagName('input')[1].value=''">
+          <label for="name">Number</label>
+        </span>
+        <button style="margin: 0 1em 0 1em;" class="btn-right"><a href="#"
+            id="to_scientific_notation">Convert</a></button>
+        <span class="input_container">
+          <input type="text" placeholder=" ">
+          <label for="name">Scientific notation</label>
+        </span>
+      </fieldset>
+
+
+      <fieldset class="field_set" id="from">
+        <legend>Convert a number from scientific notation:</legend>
+        <span class="input_container">
+          <input type="text" placeholder=" "  onfocus="document.getElementById('from').getElementsByTagName('input')[1].value=''">
+          <label for="name">Scientific notation</label>
+        </span>
+        <button style="margin: 0 1em 0 1em;" class="btn-right"><a href="#"
+            id="from_scientific_notation">Convert</a></button>
+        <span class="input_container">
+          <input type="text" placeholder=" ">
+          <label for="name">Number</label>
+        </span>
+      </fieldset>
+
+    </div>
+  </div>
+
+  <script>
+    function toScientificNotation(num) {
+      const exponent = Math.floor(Math.log10(Math.abs(num)));
+      const coefficient = num / Math.pow(10, exponent);
+      return `${coefficient.toFixed(2)}e${exponent >= 0 ? '+' + exponent : exponent}`;
+    }
+
+    //console.log(toScientificNotation(123456.789)); // Output: 1.23e+5
+    //console.log(toScientificNotation(0.000000123)); // Output: 1.23e-7
+
+    function fromScientificNotation(str) {
+      // const [coefficient, exponent] = str.split('e');
+      // let returnVal = parseFloat(coefficient) * Math.pow(10, parseInt(exponent.replace('+', ''), 10));
+      // if (exponent < 0) {
+      //   alert('exponent = ' +  parseInt(exponent));
+      //   alert('c = ' +  Math.pow(10, parseInt(exponent)));
+      //   returnVal = parseFloat(coefficient) * Math.pow(10, parseInt(exponent));
+      //   alert('returnVal = ' + returnVal);
+      // }
+      returnVal = str.toLocaleString('fullwide', { useGrouping: false })
+      return returnVal;
+    }
+
+    function scientificToDecimal(num) {
+      var nsign = Math.sign(num);
+      //remove the sign
+      num = Math.abs(num);
+      //if the number is in scientific notation remove it
+      if (/\d+\.?\d*e[\+\-]*\d+/i.test(num)) {
+        var zero = '0',
+          parts = String(num).toLowerCase().split('e'), //split into coeff and exponent
+          e = parts.pop(), //store the exponential part
+          l = Math.abs(e), //get the number of zeros
+          sign = e / l,
+          coeff_array = parts[0].split('.');
+        if (sign === -1) {
+          l = l - coeff_array[0].length;
+          if (l < 0) {
+            num = coeff_array[0].slice(0, l) + '.' + coeff_array[0].slice(l) + (coeff_array.length === 2 ? coeff_array[1] : '');
+          }
+          else {
+            num = zero + '.' + new Array(l + 1).join(zero) + coeff_array.join('');
+          }
+        }
+        else {
+          var dec = coeff_array[1];
+          if (dec)
+            l = l - dec.length;
+          if (l < 0) {
+            num = coeff_array[0] + dec.slice(0, l) + '.' + dec.slice(l);
+          } else {
+            num = coeff_array.join('') + new Array(l + 1).join(zero);
+          }
+        }
+      }
+
+      return nsign < 0 ? '-' + num : num;
+    };
+
+    console.log("Output: 123000 ? " + scientificToDecimal('1.23e+5')); // Output: 123000
+    console.log("Output: 0.000000123 ? " + scientificToDecimal('1.23e-7')); // Output: 0.000000123
+
+    function isNumeric(str) {
+      if (typeof str != "string") return false // we only process strings!  
+      return !isNaN(str) && // use type coercion to parse the _entirety_ of the string (`parseFloat` alone does not do this)...
+        !isNaN(parseFloat(str)) // ...and ensure strings of whitespace fail
+    }
+
+    var elements = document.getElementsByTagName("a");
+    let dataIn, dataOut, num;
+    for (var i = 0; i < elements.length; i++) {
+      if (elements[i].id == "to_scientific_notation") {
+        elements[i].onclick = function () {
+          //alert("to_scientific_notation");
+          dataIn = document.getElementById('to').getElementsByTagName('input')[0];
+          dataOut = document.getElementById('to').getElementsByTagName('input')[1];
+          if (dataIn.value && isNumeric(dataIn.value)) {
+            num = parseFloat(dataIn.value);
+            dataOut.value = toScientificNotation(num);
+          } else {
+            alert("Enter the number to convert")
+          }
+          return false;
+        }
+      }
+      if (elements[i].id == "from_scientific_notation") {
+        elements[i].onclick = function () {
+          //alert("from_scientific_notation");
+          dataIn = document.getElementById('from').getElementsByTagName('input')[0];
+          dataOut = document.getElementById('from').getElementsByTagName('input')[1];
+          if (dataIn.value) {
+            dataOut.value = scientificToDecimal(dataIn.value);
+          } else {
+            alert("Enter the scientific notation to convert")
+          }
+          return false;
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>
